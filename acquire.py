@@ -60,14 +60,14 @@ def rf_titanic_data(cached=False):
 
 def rf_iris_data(cached=False):
     '''
-    This function reads in titanic data from Codeup database and writes data to
-    a csv file if cached == False or if cached == True reads in titanic df from
+    This function reads in iris data from Codeup database and writes data to
+    a csv file if cached == False or if cached == True reads in iris df from
     a csv file, returns df.
     '''
     if cached == False or os.path.isfile('iris.csv') == False:
         
         # Read fresh data from db into a DataFrame.
-        df = rf_iris_data()
+        df = get_iris_data()
         
         # Write DataFrame to a csv file.
         df.to_csv('iris.csv')
