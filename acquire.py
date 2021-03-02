@@ -15,13 +15,13 @@ def get_connection(db, user=user, host=host, password=password):
     return f'mysql+pymysql://{user}:{password}@{host}/{db}'
     
     
-def get_titanic_data():
-    '''
-    This function reads in the titanic data from the Codeup db
-    and returns a pandas DataFrame with all columns.
-    '''
-    sql_query = 'SELECT * FROM passengers'
-    return pd.read_sql(sql_query, get_connection('titanic_db'))
+#def get_titanic_data():
+#    '''
+#    This function reads in the titanic data from the Codeup db
+#    and returns a pandas DataFrame with all columns.
+#    '''
+#    sql_query = 'SELECT * FROM passengers'
+#    return pd.read_sql(sql_query, get_connection('titanic_db'))
 
 
 
@@ -78,3 +78,19 @@ def rf_iris_data(cached=False):
         df = pd.read_csv('iris.csv', index_col=0)
         
     return df
+
+
+
+
+def get_titanic_data():
+    return pd.read_sql('SELECT * FROM passengers', get_connection('titanic_db'))
+
+
+
+
+
+
+
+
+
+
